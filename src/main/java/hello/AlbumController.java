@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class AlbumController {
 
     @Autowired
-    AlbumRepo albumRepo;
+    public AlbumRepo albumRepo;
 
     @GetMapping("/album")
     public String albumForm(Model model){
@@ -30,8 +30,8 @@ public class AlbumController {
         Album album1 = new Album();
         album1.setName(album.getName());
         album1.setArtist(album.getArtist());
-        albumRepo.save(album1);
+        albumRepo.save(album);
 
-        return "Saved";
+        return "album";
     }
 }
