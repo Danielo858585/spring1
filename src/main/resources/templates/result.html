@@ -3,11 +3,27 @@
 <head>
     <title>Getting Started: Handling Form Submission</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css//bootstrap.min.css">
 </head>
 <body>
 <h1>Result</h1>
+<section class="container">
+    <div class="row">
+        <c:forEach items="${albums}" var="album">
+            <div class="col-sm-6 col-md-3" style="padding-bottom: 15px">
+                <div class="thumbnail">
+                    <div class="caption">
+                        <h3>${album.name}</h3>
+                        <h3>${album.artist}</h3>
+                    </div>
+                </div>
+            </div>
+        </c:forEach>
+    </div>
+</section>
 <p th:text="'id: ' + ${album.id}" />
 <p th:text="'name: ' + ${album.name}" />
+<p th:text="'ilosc: ' + ${  ilosc}" />
 <a href="/album">Submit another message</a>
 </body>
 </html>
