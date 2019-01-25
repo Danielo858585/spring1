@@ -9,16 +9,27 @@
 <h1>Result</h1>
 <section class="container">
     <div class="row">
-        <c:forEach items="${albums}" var="album">
+        <th:block th:each="album: ${albums}">
             <div class="col-sm-6 col-md-3" style="padding-bottom: 15px">
                 <div class="thumbnail">
                     <div class="caption">
-                        <h3>${album.name}</h3>
-                        <h3>${album.artist}</h3>
+                        <h3 th:text="${album.name}"></h3>
+                        <h3 th:text="${album.artist}"></h3>
                     </div>
                 </div>
             </div>
-        </c:forEach>
+
+        </th:block>
+        <!--<c:forEach items="${albums}" var="album">-->
+            <!--<div class="col-sm-6 col-md-3" style="padding-bottom: 15px">-->
+                <!--<div class="thumbnail">-->
+                    <!--<div class="caption">-->
+                        <!--<h3>${album.name}</h3>-->
+                        <!--<h3>${album.artist}</h3>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</c:forEach>-->
     </div>
 </section>
 <p th:text="'id: ' + ${album.id}" />
